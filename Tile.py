@@ -1,7 +1,5 @@
 from enum import Enum
 import tkinter as tk
-from tkinter import ttk
-import random
 
 class TileState(Enum):
     """
@@ -14,24 +12,38 @@ class Button(tk.Button):
     """
     Button class to represent the tiles.
     """
-    def __init__(self, master, tile, row, column):
+    def __init__(self, master, row, column):
         """
         Initializes the button.
         """
-        super().__init__(master, text='', font=('Arial', 20),
-                         command=lambda: self.reveal(tile, row, column))
+        super().__init__(master, text=' ',
+                         state='disabled', width=7, height=4)
         self.grid(row=row, column=column)
         self.state = TileState.HIDDEN
-        self.row = row
-        self.column = column
-        self.tile = tile
         self.master = master
 
-    def reveal(self, tile, row, column):
+    def reveal(self):
         """
         Reveals the tile.
         """
-        if self.state == TileState.HIDDEN:
-            self.state = TileState.REVEALED
-            self.config(text=tile.value)
-            self.master.check_match(row, column)
+        self.state = TileState.REVEALED
+        self.config(bg='black')
+    
+    def hide(self):
+        """
+        Hides the tile.
+        """
+        self.state = TileState.HIDDEN
+        self.config(bg='white')
+
+    def disable(self):
+        """
+        Disables the tile.
+        """
+        self.config(state='disabled')
+
+    def enable(self):
+        """
+        Enables the tile.
+        """
+        self.config(state='normal')

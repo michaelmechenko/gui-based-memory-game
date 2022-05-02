@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-
 class ParentWindow(tk.Tk):
     """Class that initializes the parent
     window and creates the tabs."""
@@ -18,7 +17,7 @@ class ParentWindow(tk.Tk):
         self.create_tabs()
 
     def create_tabs(self):
-        """Creates the tabs for the game."""
+        """Creates the tabs/frames for the game."""
         tab_control = ttk.Notebook(self)
         easy = ttk.Frame(tab_control)
         medium = ttk.Frame(tab_control)

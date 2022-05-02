@@ -191,39 +191,9 @@ class TileMatching(tk.Tk):
                 self, text='You Lost!', font=('Arial', 20))
             self.loss_label.pack(pady=175)
 
-
-class Board():
-    def __init__(self, size) -> None:
-        self.size = size
-        self.board = [[0 for x in range(size)] for y in range(size)]
-        self.tiles = []
-
-    def create_board(self):
-        for i in range(self.size):
-            for j in range(self.size):
-                self.board[i][j] = Tile(i, j)
-                self.tiles.append(self.board[i][j])
-
-
-class Tile():
-    def __init__(self) -> None:
-        pass
-
-
 def main():
     root = TileMatching()
-    # tab_control = ttk.Notebook(root)
-    # easy = ttk.Frame(tab_control)
-    # medium = ttk.Frame(tab_control)
-    # hard = ttk.Frame(tab_control)
-    # customize = ttk.Frame(tab_control)
-    # tab_control.add(easy, text='Easy')
-    # tab_control.add(medium, text='Medium')
-    # tab_control.add(hard, text='Hard')
-    # tab_control.add(customize, text='Customize')
-    # tab_control.pack(expand=1, fill='both')
     root.mainloop()
-
 
 if __name__ == "__main__":
     main()
