@@ -1,4 +1,4 @@
-# Michael Mechenko EECE2140
+# old, saved for reference
 
 import tkinter as tk
 from tkinter import ttk
@@ -8,8 +8,6 @@ import random
 """ Memory Matching Game
     On a square grid, tiles appear for a brief moment and then disappear. 
     The goal is to find all the pairs of tiles that match."""
-
-
 class TileMatching(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -30,8 +28,6 @@ class TileMatching(tk.Tk):
         self.matches = [True for x in range(8)]
         self.matches.extend([False for x in range(8)])
         random.shuffle(self.matches)
-        print(self.matches)
-        self.answer_dict = {}
 
         # creates grid, waits 3 seconds, and then clears the grid
         self.show_grid()
