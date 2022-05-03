@@ -1,14 +1,8 @@
-# old, saved for reference
-
 import tkinter as tk
 from tkinter import ttk
-from tkinter.messagebox import showinfo
 import random
-
-""" Memory Matching Game
-    On a square grid, tiles appear for a brief moment and then disappear. 
-    The goal is to find all the pairs of tiles that match."""
 class TileMatching(tk.Tk):
+    """Class that controls window creation."""
     def __init__(self):
         super().__init__()
 

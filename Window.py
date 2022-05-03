@@ -30,5 +30,33 @@ class ParentWindow(tk.Tk):
         tab_control.add(customize, text='Customize')
         tab_control.pack(expand=1, fill='both')
 
+    def start_button(self):
+        """Creates the start button."""
+        pass
+
+    def reset(self):
+        """Resets the game."""
+        pass
+    
+    def add_timer(self):
+        """Creates the timer."""
+        pass
+    
+    def create_easy(self):
+        """Creates the easy-difficulty frame."""
+        pass
+
+    def create_medium(self):
+        """Creates the medium-difficulty frame."""
+        pass
+
+    def create_hard(self):
+        """Creates the hard-difficulty frame."""
+        pass
+
+    def create_customize(self):
+        """Creates the customizable frame."""
+        pass
+
 root = ParentWindow()
 root.mainloop()
