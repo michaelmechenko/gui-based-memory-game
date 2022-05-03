@@ -1,12 +1,11 @@
 from enum import Enum
 import tkinter as tk
-
 class TileState(Enum):
     """
     Enum for the state of a tile.
     """
-    HIDDEN = 0
-    REVEALED = 1
+    REVEALED = 0
+    HIDDEN = 1
 
 class Button(tk.Button):
     """
@@ -17,9 +16,9 @@ class Button(tk.Button):
         Initializes the button.
         """
         super().__init__(master, text=' ',
-                         state='disabled', width=7, height=4)
+                         state='disabled', width=7, height=4, bg='#f0f0f0')
         self.grid(row=row, column=column)
-        self.state = TileState.HIDDEN
+        self.state = TileState.REVEALED
         self.master = master
 
     def reveal(self):
@@ -34,7 +33,7 @@ class Button(tk.Button):
         Hides the tile.
         """
         self.state = TileState.HIDDEN
-        self.config(bg='white')
+        self.config(bg='#f0f0f0')
 
     def disable(self):
         """
