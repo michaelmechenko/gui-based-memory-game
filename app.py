@@ -1,3 +1,4 @@
+# didnt fix any of this whoops
 import tkinter as tk
 from tkinter import ttk
 import random

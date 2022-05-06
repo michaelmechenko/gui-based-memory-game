@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from unittest import case
 class ParentWindow(tk.Tk):
     """Class that initializes the parent
     window and creates the tabs."""
@@ -10,8 +11,12 @@ class ParentWindow(tk.Tk):
         self.title('Tile Matching Memory Game')
         self.geometry('800x400')
         self.resizable(False, False)
-        self.main_window = None
         self.title_label = None
+        self.tab_control = None
+        self.easy = None
+        self.medium = None
+        self.hard = None
+        self.customize = None
 
         # create tabs
         self.create_tabs()
@@ -29,6 +34,16 @@ class ParentWindow(tk.Tk):
         tab_control.add(hard, text='Hard')
         tab_control.add(customize, text='Customize')
         tab_control.pack(expand=1, fill='both')
+    
+    def get_frame(self, frame):
+        if frame == 'easy':
+            return self.easy
+        elif frame == 'medium':
+            return self.medium
+        elif frame == 'hard':
+            return self.hard
+        elif frame == 'customize':
+            return self.customize
 
     def start_button(self):
         """Creates the start button."""
@@ -56,6 +71,14 @@ class ParentWindow(tk.Tk):
 
     def create_customize(self):
         """Creates the customizable frame."""
+        pass
+
+    def win_screen(self):
+        """Displays the win screen."""
+        pass
+
+    def lose_screen(self):
+        """Displays the lose screen."""
         pass
 
 root = ParentWindow()
